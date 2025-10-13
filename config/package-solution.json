@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "oncall-schedule-client-side-solution",
+    "id": "87621f0c-9f49-4953-a3c4-b89d63fa5fb6",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "oncall-schedule description"
+      },
+      "longDescription": {
+        "default": "oncall-schedule description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "oncall-schedule Feature",
+        "description": "The feature that activates elements of the oncall-schedule solution.",
+        "id": "f9fb4d52-9023-4320-bc2e-1c381fbcac9a",
+        "version": "1.0.0.0"
+      }
+    ],
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Calendars.Read"
+      },
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Calendars.Read.Shared"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/oncall-schedule.sppkg"
+  }
+}

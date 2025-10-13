@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "4f634feb-41b3-42ec-8313-ef8e48efbcb5",
+  "alias": "WeeklyOnCallScheduleWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "supportsFullBleed": true,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "SharePointWebPart",
+    "SharePointFullPage"
+  ],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "group": { "default": "Advanced" },
+      "title": { "default": "Weekly On-Call Schedule" },
+      "description": { "default": "Displays this week’s IT on-call rotation." },
+      "officeFabricIconFontName": "Calendar",
+      "properties": {}
+    }
+  ]
+}

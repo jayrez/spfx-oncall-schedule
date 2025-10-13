@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "weekly-on-call-schedule-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/weeklyOnCallSchedule/WeeklyOnCallScheduleWebPart.js",
+          "manifest": "./src/webparts/weeklyOnCallSchedule/WeeklyOnCallScheduleWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "WeeklyOnCallScheduleWebPartStrings": "lib/webparts/weeklyOnCallSchedule/loc/{locale}.js"
+  }
+}
