@@ -1,75 +1,101 @@
-# oncall-schedule
+# 🧭 SPFx On-Call Schedule Web Part
 
-## Summary
-
-Short summary on functionality and used technologies.
-
-[picture of the solution in action, if possible]
-
-## Used SharePoint Framework Version
-
-![version](https://img.shields.io/badge/version-1.20.0-green.svg)
-
-## Applies to
-
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
-## Prerequisites
-
-> Any special pre-requisites?
-
-## Solution
-
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
-
-## Version history
-
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+A modern **SharePoint Framework (SPFx)** web part that dynamically displays the **IT On-Call Schedule** from a shared Outlook calendar using **Microsoft Graph API**.  
+Built to enhance internal visibility of on-call coverage for IT staff and other departments, this solution automatically syncs with the organization's centralized calendar — ensuring that employees always see an up-to-date on-call rotation directly in SharePoint.
 
 ---
 
-## Minimal Path to Awesome
+## 🚀 Features
 
-- Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
+- **Dynamic Microsoft Graph Integration**  
+  Automatically retrieves events from the shared IT On-Call calendar (`it-oncall@cvch.org`).
 
-> Include any additional steps as needed.
+- **Real-Time Weekly View**  
+  Displays a live week-by-week view of current and upcoming on-call assignments.
 
-## Features
+- **Responsive UI**  
+  Fully adaptive layout that fits both desktop and mobile views, with smooth scroll and current-day highlighting.
 
-Description of the extension that expands upon high-level summary above.
+- **Center-Aligned, Full-Width Aesthetic**  
+  Designed with a branded gradient and balanced spacing for a professional internal dashboard appearance.
 
-This extension illustrates the following concepts:
+- **Secure Permissions**  
+  Uses delegated Graph permissions (`Calendars.Read`, `Calendars.Read.Shared`) via `package-solution.json` for secure data access.
 
-- topic 1
-- topic 2
-- topic 3
+---
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
+## 🖼️ Example
 
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+![SPFx On-Call Schedule Example](src/webparts/weeklyOnCallSchedule/assets/spfx-oncall-schedule-example.png)
 
-## References
+---
 
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
-# spfx-oncall-schedule
-# spfx-oncall-schedule
+## 🧩 Tech Stack
+
+| Component | Description |
+|------------|-------------|
+| **SPFx 1.20+** | Framework used for the SharePoint client-side solution |
+| **React 18** | UI layer for rendering the dynamic schedule grid |
+| **Microsoft Graph (v3)** | API endpoint for fetching shared calendar data |
+| **TypeScript** | Strongly-typed logic and interfaces for safer coding |
+| **date-fns** | Lightweight date manipulation utilities for weekly logic |
+
+---
+
+## ⚙️ Installation & Deployment
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/jayrez/spfx-oncall-schedule.git
+   cd spfx-oncall-schedule
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the local workbench**
+   ```bash
+   gulp serve
+   ```
+   Open in browser:  
+   `https://yourtenant.sharepoint.com/_layouts/15/workbench.aspx`
+
+4. **Build & package for deployment**
+   ```bash
+   gulp bundle --ship
+   gulp package-solution --ship
+   ```
+
+5. **Upload to the App Catalog**
+   - Go to:  
+     `https://yourtenant.sharepoint.com/sites/appcatalog/AppCatalog/Forms/AllItems.aspx`
+   - Upload `oncall-schedule.sppkg`
+   - Approve the Graph API permissions when prompted (`Calendars.Read`, `Calendars.Read.Shared`)
+
+6. **Add the web part to a SharePoint page**
+   - Edit a modern page  
+   - Select **Add a Web Part → On-Call Schedule**  
+   - Publish and enjoy live schedule syncing 🎉
+
+---
+
+## 💡 Use Case
+
+Designed for IT operations teams that maintain rotating on-call schedules, this web part centralizes that visibility in SharePoint.  
+It eliminates manual updates or duplicated lists — automatically syncing directly from Outlook 365 Calendar data using Microsoft Graph.
+
+---
+
+## 👨‍💻 Author
+
+**Julio Ramirez**  
+Senior System Administrator & IT Operations Lead  
+[GitHub: @jayrez](https://github.com/jayrez)
+
+---
+
+## 📝 License
+
+This project is open-source under the [MIT License](LICENSE).
