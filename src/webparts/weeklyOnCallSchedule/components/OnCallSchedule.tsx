@@ -11,8 +11,13 @@ interface ICalendarEvent {
   subject: string;
   start: { dateTime: string; timeZone?: string };
   end: { dateTime: string; timeZone?: string };
-  organizer?: { emailAddress?: { name?: string } };
+  organizer?: { emailAddress?: { name?: string; address?: string } };
   location?: { displayName?: string };
+  attendees?: {
+    emailAddress?: { name?: string; address?: string };
+    type?: string;
+    status?: { response?: string; time?: string };
+  }[];
 }
 
 const OnCallSchedule: React.FC<IOnCallScheduleProps> = ({ context }) => {
@@ -33,7 +38,7 @@ const OnCallSchedule: React.FC<IOnCallScheduleProps> = ({ context }) => {
             startDateTime: start.toISOString(),
             endDateTime: end.toISOString(),
           })
-          .select('subject,start,end,organizer,location')
+          .select('subject,start,end,attendees')
           .orderby('start/dateTime')
           .get();
 
@@ -67,8 +72,7 @@ const OnCallSchedule: React.FC<IOnCallScheduleProps> = ({ context }) => {
     return {
       day: format(date, 'EEE'),
       date: format(date, 'MMM d'),
-      name: event ? event.subject : '—',
-      team: event?.location?.displayName || '',
+      name: event?.attendees?.[0]?.emailAddress?.name || '—',
       highlight: date.toDateString() === today.toDateString(),
     };
   });
@@ -144,7 +148,6 @@ const OnCallSchedule: React.FC<IOnCallScheduleProps> = ({ context }) => {
                 {d.date}
               </div>
               <div style={{ fontWeight: 600 }}>{d.name}</div>
-              <div style={{ fontSize: '0.8rem', color: '#e0cbe0' }}>{d.team}</div>
             </div>
           ))}
         </div>
