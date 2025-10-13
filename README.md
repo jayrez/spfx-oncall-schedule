@@ -26,7 +26,7 @@ Built to enhance internal visibility of on-call coverage for IT staff and other 
 
 ## 🖼️ Example
 
-![SPFx On-Call Schedule Example](/src/webparts/weeklyOnCallSchedule/assets/spfx-oncall-schedule-example.png)
+![SPFx On-Call Schedule Example](src/webparts/weeklyOnCallSchedule/assets/spfx-oncall-schedule-example.png)
 
 ---
 
