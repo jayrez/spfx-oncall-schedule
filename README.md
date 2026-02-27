@@ -1,7 +1,7 @@
 # 🧭 Vibe Coded SPFx On-Call Schedule Web Part
 
 A modern **SharePoint Framework (SPFx)** web part that dynamically displays the **IT On-Call Schedule** from a shared Outlook calendar using **Microsoft Graph API**.  
-Built to enhance internal visibility of on-call coverage for IT staff and other departments, this solution automatically syncs with the organization's centralized calendar — ensuring that employees always see an up-to-date on-call rotation directly in SharePoint.
+Built to enhance internal visibility of on-call coverage for IT staff and other departments, this solution automatically syncs with the organization's centralized calendar - ensuring that employees always see an up-to-date on-call rotation directly in SharePoint.
 
 ---
 
@@ -84,7 +84,7 @@ Built to enhance internal visibility of on-call coverage for IT staff and other 
 ## 💡 Use Case
 
 Designed for IT operations teams that maintain rotating on-call schedules, this web part centralizes that visibility in SharePoint.  
-It eliminates manual updates or duplicated lists — automatically syncing directly from Outlook 365 Calendar data using Microsoft Graph.
+It eliminates manual updates or duplicated lists - automatically syncing directly from Outlook 365 Calendar data using Microsoft Graph.
 
 ---
 
